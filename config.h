@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Calling Code:pixelsize=16:antialias=true:autohint=false";
+static char *font = "Calling Code:pixelsize=18:antialias=true:autohint=false";
 static int borderpx = 2;
 
 /*
