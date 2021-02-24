@@ -2618,8 +2618,7 @@ tresize(int col, int row)
 			tclearregion(0, minrow, col - 1, row - 1);
 		}
 		tswapscreen();
-		tcursor(CURSOR_LOAD);
-	}
+		tcursor(CURSOR_LOAD); }
 	term.c = c;
 }
 
