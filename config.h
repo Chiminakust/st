@@ -6,12 +6,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *fonts[] = {
+			"hermit:pixelsize=20:antialias=true:autohint=false",
+			"hermit:pixelsize=15:antialias=true:autohint=false",
+			"hermit:pixelsize=30:antialias=true:autohint=false",
 			"Calling Code:pixelsize=15:antialias=true:autohint=false",
 			"Calling Code:pixelsize=20:antialias=true:autohint=false",
 			"Calling Code:pixelsize=30:antialias=true:autohint=false",
-			"hermit:pixelsize=15:antialias=true:autohint=false",
-			"hermit:pixelsize=20:antialias=true:autohint=false",
-			"hermit:pixelsize=30:antialias=true:autohint=false",
 			"mononoki:pixelsize=15:antialias=true:autohint=false",
 			"mononoki:pixelsize=20:antialias=true:autohint=false",
 			"mononoki:pixelsize=30:antialias=true:autohint=false",
