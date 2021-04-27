@@ -104,54 +104,59 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+
+/* background opacity */
+float alpha  = 0.7;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* darcula */
-	// /* 8 normal colors */
-	// "#000000",   /* black    */
-	// "#ff5555",   /* red3     */
-	// "#50fa7b",   /* green3   */
-	// "#f1fa8c",   /* yellow3  */
-	// "#bd93f9",   /* blue2    */
-	// "#ff79c6",   /* magenta3 */
-	// "#8be9fd",   /* cyan3    */
-	// "#bbbbbb",   /* gray90   */
+	/* dracula */
+	/* 8 normal colors */
+	"#000000",   /* black    */
+	"#ff5555",   /* red3     */
+	"#50fa7b",   /* green3   */
+	"#f1fa8c",   /* yellow3  */
+	"#bd93f9",   /* blue2    */
+	"#ff79c6",   /* magenta3 */
+	"#8be9fd",   /* cyan3    */
+	"#bbbbbb",   /* gray90   */
 
-	// /* 8 bright colors */
-	// "#44475a", /* gray 50 */
-	// "#ff5555", /* red     */
-	// "#50fa7b", /* green   */
-	// "#f1fa8c", /* yellow  */
-	// "#bd93f9", /* purple  */
-	// "#ff79c6", /* magenta */
-	// "#8be9fd", /* cyan    */
-	// "#ffffff", /* white   */
+	/* 8 bright colors */
+	"#44475a", /* gray 50 */
+	"#ff5555", /* red     */
+	"#50fa7b", /* green   */
+	"#f1fa8c", /* yellow  */
+	"#bd93f9", /* purple  */
+	"#ff79c6", /* magenta */
+	"#8be9fd", /* cyan    */
+	"#ffffff", /* white   */
 
-	/* solarized light colors */
-	/* normal colors */
-	"#eee8d5",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#073642",  /*  7: white    */
-	/* bright colors */
-	"#fdf6e3",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#93a1a1",  /* 10: brgreen  */
-	"#839496",  /* 11: bryellow */
-	"#657b83",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#586e75",  /* 14: brcyan   */
-	"#002b36",  /* 15: brwhite  */
+	// /* solarized light colors */
+	// /* normal colors */
+	// "#eee8d5",  /*  0: black    */
+	// "#dc322f",  /*  1: red      */
+	// "#859900",  /*  2: green    */
+	// "#b58900",  /*  3: yellow   */
+	// "#268bd2",  /*  4: blue     */
+	// "#d33682",  /*  5: magenta  */
+	// "#2aa198",  /*  6: cyan     */
+	// "#073642",  /*  7: white    */
+	// /* bright colors */
+	// "#fdf6e3",  /*  8: brblack  */
+	// "#cb4b16",  /*  9: brred    */
+	// "#93a1a1",  /* 10: brgreen  */
+	// "#839496",  /* 11: bryellow */
+	// "#657b83",  /* 12: brblue   */
+	// "#6c71c4",  /* 13: brmagenta*/
+	// "#586e75",  /* 14: brcyan   */
+	// "#002b36",  /* 15: brwhite  */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	[256] = "#282a36",
 	[257] = "#f8f8f2",
+	[258] = "black",
 };
 
 
@@ -159,9 +164,11 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-// unsigned int defaultfg = 12;
-unsigned int defaultfg = 256;
-unsigned int defaultbg = 8;
+unsigned int defaultfg = 12;
+// unsigned int defaultfg = 256;
+/* patch alpha */
+// unsigned int defaultbg = 8;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 14;
 static unsigned int defaultrcs = 15;
 
