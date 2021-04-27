@@ -15,9 +15,6 @@ static char *fonts[] = {
 			"mononoki:pixelsize=15:antialias=true:autohint=false",
 			"mononoki:pixelsize=20:antialias=true:autohint=false",
 			"mononoki:pixelsize=30:antialias=true:autohint=false",
-			"scientifica:pixelsize=15:antialias=true:autohint=false",
-			"scientifica:pixelsize=20:antialias=true:autohint=false",
-			"scientifica:pixelsize=30:antialias=true:autohint=false"
 };
 static int fonts_current = 0;
 static int borderpx = 2;
