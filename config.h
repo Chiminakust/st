@@ -112,24 +112,24 @@ float alpha  = 0.7;
 static const char *colorname[] = {
 	/* dracula */
 	/* 8 normal colors */
-	"#000000",   /* black    */
-	"#ff5555",   /* red3     */
-	"#50fa7b",   /* green3   */
-	"#f1fa8c",   /* yellow3  */
-	"#bd93f9",   /* blue2    */
-	"#ff79c6",   /* magenta3 */
-	"#8be9fd",   /* cyan3    */
-	"#bbbbbb",   /* gray90   */
+	"#000000", /* black   */
+	"#ff1a1a", /* red     */
+	"#08f744", /* green   */
+	"#e4f623", /* yellow  */
+	"#7b26f2", /* purple  */
+	"#ff1a9c", /* magenta */
+	"#1dd3fc", /* cyan    */
+	"#bbbbbb", /* gray90  */
 
 	/* 8 bright colors */
-	"#44475a", /* gray 50 */
-	"#ff5555", /* red     */
-	"#50fa7b", /* green   */
-	"#f1fa8c", /* yellow  */
-	"#bd93f9", /* purple  */
-	"#ff79c6", /* magenta */
-	"#8be9fd", /* cyan    */
-	"#ffffff", /* white   */
+	"#44475a", /* gray 50  */
+	"#ff5555", /* red3     */
+	"#50fa7b", /* green3   */
+	"#f1fa8c", /* yellow3  */
+	"#bd93f9", /* blue2    */
+	"#ff79c6", /* magenta3 */
+	"#8be9fd", /* cyan3    */
+	"#ffffff", /* white    */
 
 	// /* solarized light colors */
 	// /* normal colors */
