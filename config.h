@@ -1,20 +1,28 @@
 /* See LICENSE file for copyright and license details. */
 
+
+/* theme selection */
+#define DRACULA         1
+#define SOLARIZED_LIGHT 2
+
+#define THEME SOLARIZED_LIGHT
+
+
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *fonts[] = {
-			"hermit:pixelsize=20:antialias=true:autohint=false",
-			"hermit:pixelsize=15:antialias=true:autohint=false",
-			"hermit:pixelsize=30:antialias=true:autohint=false",
-			"Calling Code:pixelsize=15:antialias=true:autohint=false",
-			"Calling Code:pixelsize=20:antialias=true:autohint=false",
-			"Calling Code:pixelsize=30:antialias=true:autohint=false",
-			"mononoki:pixelsize=15:antialias=true:autohint=false",
-			"mononoki:pixelsize=20:antialias=true:autohint=false",
-			"mononoki:pixelsize=30:antialias=true:autohint=false",
+	"mononoki:pixelsize=20:antialias=true:autohint=false",
+	"mononoki:pixelsize=15:antialias=true:autohint=false",
+	"mononoki:pixelsize=30:antialias=true:autohint=false",
+	"Calling Code:pixelsize=15:antialias=true:autohint=false",
+	"Calling Code:pixelsize=20:antialias=true:autohint=false",
+	"Calling Code:pixelsize=30:antialias=true:autohint=false",
+	"hermit:pixelsize=20:antialias=true:autohint=false",
+	"hermit:pixelsize=15:antialias=true:autohint=false",
+	"hermit:pixelsize=30:antialias=true:autohint=false",
 };
 static int fonts_current = 0;
 static int borderpx = 2;
@@ -106,50 +114,51 @@ unsigned int tabspaces = 8;
 
 
 /* background opacity */
-float alpha  = 0.7;
+float alpha  = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+#if THEME == DRACULA
 	/* dracula */
 	/* 8 normal colors */
-	"#000000", /* black   */
-	"#ff1a1a", /* red     */
-	"#08f744", /* green   */
-	"#e4f623", /* yellow  */
-	"#7b26f2", /* purple  */
-	"#ff1a9c", /* magenta */
-	"#1dd3fc", /* cyan    */
-	"#bbbbbb", /* gray90  */
-
+	"#000000",   /* black    */
+	"#ff5555",   /* red3     */
+	"#50fa7b",   /* green3   */
+	"#f1fa8c",   /* yellow3  */
+	"#bd93f9",   /* blue2    */
+	"#ff79c6",   /* magenta3 */
+	"#8be9fd",   /* cyan3    */
+	"#bbbbbb",   /* gray90   */
 	/* 8 bright colors */
-	"#44475a", /* gray 50  */
-	"#ff5555", /* red3     */
-	"#50fa7b", /* green3   */
-	"#f1fa8c", /* yellow3  */
-	"#bd93f9", /* blue2    */
-	"#ff79c6", /* magenta3 */
-	"#8be9fd", /* cyan3    */
-	"#ffffff", /* white    */
-
-	// /* solarized light colors */
-	// /* normal colors */
-	// "#eee8d5",  /*  0: black    */
-	// "#dc322f",  /*  1: red      */
-	// "#859900",  /*  2: green    */
-	// "#b58900",  /*  3: yellow   */
-	// "#268bd2",  /*  4: blue     */
-	// "#d33682",  /*  5: magenta  */
-	// "#2aa198",  /*  6: cyan     */
-	// "#073642",  /*  7: white    */
-	// /* bright colors */
-	// "#fdf6e3",  /*  8: brblack  */
-	// "#cb4b16",  /*  9: brred    */
-	// "#93a1a1",  /* 10: brgreen  */
-	// "#839496",  /* 11: bryellow */
-	// "#657b83",  /* 12: brblue   */
-	// "#6c71c4",  /* 13: brmagenta*/
-	// "#586e75",  /* 14: brcyan   */
-	// "#002b36",  /* 15: brwhite  */
+	"#44475a", /* gray 50 */
+	"#ff5555", /* red     */
+	"#50fa7b", /* green   */
+	"#f1fa8c", /* yellow  */
+	"#bd93f9", /* purple  */
+	"#ff79c6", /* magenta */
+	"#8be9fd", /* cyan    */
+	"#ffffff", /* white   */
+#elif THEME == SOLARIZED_LIGHT
+	/* solarized light colors */
+	/* normal colors */
+	"#eee8d5",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#073642",  /*  7: white    */
+	/* bright colors */
+	"#fdf6e3",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#93a1a1",  /* 10: brgreen  */
+	"#839496",  /* 11: bryellow */
+	"#657b83",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#586e75",  /* 14: brcyan   */
+	"#002b36",  /* 15: brwhite  */
+#endif
 
 	[255] = 0,
 
@@ -164,11 +173,18 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+#if THEME == DRACULA
 unsigned int defaultfg = 12;
-// unsigned int defaultfg = 256;
+#elif THEME == SOLARIZED_LIGHT
+unsigned int defaultfg = 256;
+#endif
+
 /* patch alpha */
-// unsigned int defaultbg = 8;
+#if THEME == DRACULA
 unsigned int defaultbg = 258;
+#elif THEME == SOLARIZED_LIGHT
+unsigned int defaultbg = 8;
+#endif
 static unsigned int defaultcs = 14;
 static unsigned int defaultrcs = 15;
 
