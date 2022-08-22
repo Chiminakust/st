@@ -5,7 +5,11 @@
 #define DRACULA         1
 #define SOLARIZED_LIGHT 2
 
-#define THEME SOLARIZED_LIGHT
+#define THEME DRACULA
+
+#if THEME == SOLARIZED_LIGHT
+#define LIGHT_BG 1
+#endif
 
 
 /*
@@ -114,7 +118,11 @@ unsigned int tabspaces = 8;
 
 
 /* background opacity */
-float alpha  = 1.0;
+#ifdef LIGHT_BG
+float alpha = 1.0;
+#else
+float alpha = 0.7;
+#endif
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
